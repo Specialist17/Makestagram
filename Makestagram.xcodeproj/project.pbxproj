@@ -30,6 +30,10 @@
 		90FF433B1F02F90E00835F1B /* Post.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90FF433A1F02F90E00835F1B /* Post.swift */; };
 		90FF433D1F02FC1100835F1B /* UIImage+Size.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90FF433C1F02FC1100835F1B /* UIImage+Size.swift */; };
 		90FF433F1F02FDDC00835F1B /* StorageReference+Post.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90FF433E1F02FDDC00835F1B /* StorageReference+Post.swift */; };
+		90FF43421F0306B100835F1B /* Home.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 90FF43401F0306B100835F1B /* Home.storyboard */; };
+		90FF43441F031A4400835F1B /* PostImageCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90FF43431F031A4400835F1B /* PostImageCell.swift */; };
+		90FF43461F04124900835F1B /* PostHeaderCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90FF43451F04124900835F1B /* PostHeaderCell.swift */; };
+		90FF43481F0415FE00835F1B /* PostActionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90FF43471F0415FE00835F1B /* PostActionCell.swift */; };
 		CAE13DFA5D33A5C253EAA7BE /* Pods_Makestagram.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C49D675CFD19D64B903A8642 /* Pods_Makestagram.framework */; };
 /* End PBXBuildFile section */
 
@@ -60,6 +64,10 @@
 		90FF433A1F02F90E00835F1B /* Post.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Post.swift; sourceTree = "<group>"; };
 		90FF433C1F02FC1100835F1B /* UIImage+Size.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIImage+Size.swift"; sourceTree = "<group>"; };
 		90FF433E1F02FDDC00835F1B /* StorageReference+Post.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "StorageReference+Post.swift"; sourceTree = "<group>"; };
+		90FF43411F0306B100835F1B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Home.storyboard; sourceTree = "<group>"; };
+		90FF43431F031A4400835F1B /* PostImageCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PostImageCell.swift; sourceTree = "<group>"; };
+		90FF43451F04124900835F1B /* PostHeaderCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PostHeaderCell.swift; sourceTree = "<group>"; };
+		90FF43471F0415FE00835F1B /* PostActionCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PostActionCell.swift; sourceTree = "<group>"; };
 		C49D675CFD19D64B903A8642 /* Pods_Makestagram.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Makestagram.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		DA8D45166D70C5958BB7359A /* Pods-Makestagram.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Makestagram.release.xcconfig"; path = "Pods/Target Support Files/Pods-Makestagram/Pods-Makestagram.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -136,6 +144,9 @@
 			isa = PBXGroup;
 			children = (
 				90FF43241F018EF700835F1B /* MakestagramButton.swift */,
+				90FF43431F031A4400835F1B /* PostImageCell.swift */,
+				90FF43451F04124900835F1B /* PostHeaderCell.swift */,
+				90FF43471F0415FE00835F1B /* PostActionCell.swift */,
 			);
 			name = Views;
 			sourceTree = "<group>";
@@ -192,6 +203,7 @@
 			isa = PBXGroup;
 			children = (
 				90FF43011F016D6100835F1B /* Main.storyboard */,
+				90FF43401F0306B100835F1B /* Home.storyboard */,
 				90FF43091F016D6100835F1B /* LaunchScreen.storyboard */,
 				90FF431C1F0174B500835F1B /* Login.storyboard */,
 			);
@@ -272,6 +284,7 @@
 				90FF430B1F016D6100835F1B /* LaunchScreen.storyboard in Resources */,
 				90FF43081F016D6100835F1B /* Assets.xcassets in Resources */,
 				90FF43031F016D6100835F1B /* Main.storyboard in Resources */,
+				90FF43421F0306B100835F1B /* Home.storyboard in Resources */,
 				90FF431D1F0174B500835F1B /* Login.storyboard in Resources */,
 				90FF431B1F0170E900835F1B /* GoogleService-Info.plist in Resources */,
 			);
@@ -338,13 +351,16 @@
 				90FF43061F016D6100835F1B /* Makestagram.xcdatamodeld in Sources */,
 				90FF43271F01ABD000835F1B /* UserService.swift in Sources */,
 				90FF43211F01862900835F1B /* User.swift in Sources */,
+				90FF43481F0415FE00835F1B /* PostActionCell.swift in Sources */,
 				90FF432F1F01C52200835F1B /* NewFriendsViewController.swift in Sources */,
 				90FF433F1F02FDDC00835F1B /* StorageReference+Post.swift in Sources */,
+				90FF43441F031A4400835F1B /* PostImageCell.swift in Sources */,
 				90FF432D1F01C51400835F1B /* HomeViewController.swift in Sources */,
 				90FF433D1F02FC1100835F1B /* UIImage+Size.swift in Sources */,
 				90FF43251F018EF700835F1B /* MakestagramButton.swift in Sources */,
 				90FF42FE1F016D6100835F1B /* AppDelegate.swift in Sources */,
 				90FF43391F02F5B700835F1B /* PostService.swift in Sources */,
+				90FF43461F04124900835F1B /* PostHeaderCell.swift in Sources */,
 				90FF433B1F02F90E00835F1B /* Post.swift in Sources */,
 				90FF43351F02D57700835F1B /* MGPhotoHelper.swift in Sources */,
 				90FF43291F01BE5300835F1B /* Constants.swift in Sources */,
@@ -370,6 +386,14 @@
 				90FF430A1F016D6100835F1B /* Base */,
 			);
 			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+		90FF43401F0306B100835F1B /* Home.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				90FF43411F0306B100835F1B /* Base */,
+			);
+			name = Home.storyboard;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */

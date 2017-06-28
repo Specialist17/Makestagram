@@ -19,4 +19,10 @@ struct Constants {
         static let uid = "uid"
         static let username = "username"
     }
+    
+    struct Post {
+        static let imageUrl = "image_url"
+        static let imageHeight = "image_height"
+        static let createdAt = "created_at"
+    }
 }
