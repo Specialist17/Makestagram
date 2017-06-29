@@ -17,6 +17,7 @@ class HomeViewController: UIViewController {
     
     // MARK: - Properties
     var posts = [Post]()
+    let refreshControl = UIRefreshControl()
     
     let timestampFormatter: DateFormatter = {
         let dateFormatter = DateFormatter()
@@ -29,8 +30,9 @@ class HomeViewController: UIViewController {
         super.viewDidLoad()
 
         configureTableView()
+        reloadTimeline()
         
-        UserService.posts(for: User.current) { (posts) in
+        UserService.timeline { (posts) in
             self.posts = posts
             self.timelineTableView.reloadData()
         }
@@ -44,6 +46,21 @@ class HomeViewController: UIViewController {
     func configureTableView(){
         timelineTableView.tableFooterView = UIView()
         timelineTableView.separatorStyle = .none
+        
+        refreshControl.addTarget(self, action: #selector(reloadTimeline), for: .valueChanged)
+        timelineTableView.addSubview(refreshControl)
+    }
+    
+    func reloadTimeline(){
+        UserService.timeline { (posts) in
+            self.posts = posts
+            
+            if self.refreshControl.isRefreshing {
+                self.refreshControl.endRefreshing()
+            }
+            
+            self.timelineTableView.reloadData()
+        }
     }
 
 }
@@ -65,7 +82,7 @@ extension HomeViewController: UITableViewDataSource {
         switch indexPath.row {
         case 0:
             let cell = timelineTableView.dequeueReusableCell(withIdentifier: "PostHeaderCell", for: indexPath) as! PostHeaderCell
-            cell.usernameLabel.text = User.current.username
+            cell.usernameLabel.text = post.poster.username
             
             return cell
             
@@ -78,14 +95,20 @@ extension HomeViewController: UITableViewDataSource {
         
         case 2:
             let cell = timelineTableView.dequeueReusableCell(withIdentifier: "PostActionCell", for: indexPath) as! PostActionCell
-            
-            cell.timestampLabel.text = timestampFormatter.string(from: post.creationDate)
+            cell.delegate = self
+            configureCell(cell, with: post)
             
             return cell
             
         default:
             fatalError("Error: unexpected indexPath.")
         }
+    }
+    
+    func configureCell(_ cell: PostActionCell, with post: Post){
+        cell.timestampLabel.text = timestampFormatter.string(from: post.creationDate)
+        cell.likeButton.isSelected = post.isLiked
+        cell.likesLabel.text = "\(post.likeCount) likes"
     }
 }
 
@@ -110,5 +133,46 @@ extension HomeViewController: UITableViewDelegate {
 
         
         
+    }
+}
+
+extension HomeViewController: PostActionCellDelegate {
+    func didTapLikeButton(_ likeButton: UIButton, on cell: PostActionCell) {
+        
+        // 1: First we make sure that an index path exists for the the given cell. We'll need the index path of the cell later on to reference the correct post.
+        guard let indexPath = timelineTableView.indexPath(for: cell)
+            else {return}
+        
+        // 2: Set the isUserInteractionEnabled property of the UIButton to false so the user doesn't accidentally send multiple requests by tapping too quickly.
+        likeButton.isUserInteractionEnabled = false
+        
+        // 3: Reference the correct post corresponding with the PostActionCell that the user tapped.
+        let post = posts[indexPath.section]
+        
+        // 4: Use our LikeService to like or unlike the post based on the isLiked property.
+        LikeService.setIsLiked(!post.isLiked, for: post) { (success) in
+            
+            // 5: Use defer to set isUserInteractionEnabled to true whenever the closure returns.
+            defer {
+                likeButton.isUserInteractionEnabled = true
+            }
+            
+            // 6: Basic error handling if something goes wrong with our network request.
+            guard success else {return}
+            
+            // 7: Change the likeCount and isLiked properties of our post if our network request was successful.
+            post.likeCount += !post.isLiked ? 1 : -1
+            post.isLiked = !post.isLiked
+            
+            // 8: Get a reference to the current cell.
+            guard let cell = self.timelineTableView.cellForRow(at: indexPath) as? PostActionCell
+                else {return}
+            
+            // 9: Update the UI of the cell on the main thread. Remember that all UI updates must happen on the main thread.
+            DispatchQueue.main.async {
+                self.configureCell(cell, with: post)
+            }
+            
+        }
     }
 }

@@ -51,6 +51,7 @@
                                                     </connections>
                                                 </button>
                                             </subviews>
+                                            <color key="backgroundColor" red="0.49019607840000001" green="0.33333333329999998" blue="0.98431372549999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                             <constraints>
                                                 <constraint firstItem="hUS-em-cyV" firstAttribute="centerY" secondItem="CeX-NU-quY" secondAttribute="centerY" id="2NH-0U-nvX"/>
                                                 <constraint firstAttribute="bottom" secondItem="qwI-S1-dEH" secondAttribute="bottom" id="7Cg-ps-88x"/>
@@ -73,6 +74,7 @@
                                             <subviews>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="0bl-va-Y9n">
                                                     <rect key="frame" x="0.0" y="0.0" width="375" height="374.5"/>
+                                                    <color key="backgroundColor" red="0.21960784310000001" green="0.59215686270000001" blue="0.94117647059999998" alpha="1" colorSpace="calibratedRGB"/>
                                                 </imageView>
                                             </subviews>
                                             <constraints>
@@ -99,6 +101,7 @@
                                                         <constraint firstAttribute="width" secondItem="RbQ-Xa-yLF" secondAttribute="height" multiplier="1:1" id="419-sd-VAt"/>
                                                     </constraints>
                                                     <state key="normal" image="btn_heart_black_outline"/>
+                                                    <state key="selected" image="btn_heart_red_solid"/>
                                                     <connections>
                                                         <action selector="likeButtonTapped:" destination="ASW-X1-c1X" eventType="touchUpInside" id="IvP-qU-4iM"/>
                                                     </connections>
@@ -123,6 +126,7 @@
                                                     </constraints>
                                                 </view>
                                             </subviews>
+                                            <color key="backgroundColor" red="1" green="0.41568627450000001" blue="0.58431372550000005" alpha="1" colorSpace="calibratedRGB"/>
                                             <constraints>
                                                 <constraint firstItem="oKb-20-9X7" firstAttribute="leading" secondItem="RbQ-Xa-yLF" secondAttribute="trailing" id="35m-0O-lzv"/>
                                                 <constraint firstAttribute="trailing" secondItem="GNw-S5-IjA" secondAttribute="trailing" constant="15" id="Aqj-hS-ZUp"/>
@@ -191,6 +195,7 @@
     </scenes>
     <resources>
         <image name="btn_heart_black_outline" width="24" height="24"/>
+        <image name="btn_heart_red_solid" width="24" height="24"/>
         <image name="btn_options_black" width="24" height="24"/>
         <image name="tab_home_black" width="25" height="25"/>
     </resources>
