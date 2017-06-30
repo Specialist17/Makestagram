@@ -9,6 +9,7 @@
 import Foundation
 import FirebaseDatabase
 
+
 extension DatabaseReference {
     enum MGLocation {
         case root
@@ -36,8 +37,6 @@ extension DatabaseReference {
             case let .timeline(userUID):
                 return root.child("timeline").child(userUID)
                 
-            default:
-                <#code#>
             }
         }
 

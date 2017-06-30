@@ -9,7 +9,7 @@
 import UIKit
 import FirebaseDatabase.FIRDataSnapshot
 
-class Post {
+class Post: MGKeyed {
     
     //MARK: - properties
     var key: String?

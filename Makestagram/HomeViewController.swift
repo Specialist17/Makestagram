@@ -19,6 +19,8 @@ class HomeViewController: UIViewController {
     var posts = [Post]()
     let refreshControl = UIRefreshControl()
     
+    let paginationHelper = MGPaginationHelper<Post>(serviceMethod: UserService.timeline)
+    
     let timestampFormatter: DateFormatter = {
         let dateFormatter = DateFormatter()
         dateFormatter.dateStyle = .short
@@ -31,11 +33,6 @@ class HomeViewController: UIViewController {
 
         configureTableView()
         reloadTimeline()
-        
-        UserService.timeline { (posts) in
-            self.posts = posts
-            self.timelineTableView.reloadData()
-        }
     }
 
     override func didReceiveMemoryWarning() {
@@ -52,7 +49,7 @@ class HomeViewController: UIViewController {
     }
     
     func reloadTimeline(){
-        UserService.timeline { (posts) in
+        self.paginationHelper.reloadData { [unowned self] (posts) in
             self.posts = posts
             
             if self.refreshControl.isRefreshing {
@@ -81,20 +78,20 @@ extension HomeViewController: UITableViewDataSource {
         
         switch indexPath.row {
         case 0:
-            let cell = timelineTableView.dequeueReusableCell(withIdentifier: "PostHeaderCell", for: indexPath) as! PostHeaderCell
+            let cell: PostHeaderCell = timelineTableView.dequeueReusableCell()
             cell.usernameLabel.text = post.poster.username
             
             return cell
             
         case 1:
-            let cell = timelineTableView.dequeueReusableCell(withIdentifier: "PostImageCell", for: indexPath) as! PostImageCell
+            let cell: PostImageCell = timelineTableView.dequeueReusableCell()
             let imageURL = URL(string: post.imageUrl!)
             cell.postImageview.kf.setImage(with: imageURL)
             
             return cell
         
         case 2:
-            let cell = timelineTableView.dequeueReusableCell(withIdentifier: "PostActionCell", for: indexPath) as! PostActionCell
+            let cell: PostActionCell = timelineTableView.dequeueReusableCell()
             cell.delegate = self
             configureCell(cell, with: post)
             
@@ -105,8 +102,21 @@ extension HomeViewController: UITableViewDataSource {
         }
     }
     
+    func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
+        if indexPath.section >= posts.count - 1 {
+            paginationHelper.paginate(completion: { [unowned self] (posts) in
+                self.posts.append(contentsOf: posts)
+                
+                DispatchQueue.main.async {
+                    self.timelineTableView.reloadData()
+                }
+            })
+        }
+    }
+    
     func configureCell(_ cell: PostActionCell, with post: Post){
         cell.timestampLabel.text = timestampFormatter.string(from: post.creationDate)
+        print(post.isLiked)
         cell.likeButton.isSelected = post.isLiked
         cell.likesLabel.text = "\(post.likeCount) likes"
     }
@@ -149,6 +159,8 @@ extension HomeViewController: PostActionCellDelegate {
         // 3: Reference the correct post corresponding with the PostActionCell that the user tapped.
         let post = posts[indexPath.section]
         
+        var counter = 0
+        
         // 4: Use our LikeService to like or unlike the post based on the isLiked property.
         LikeService.setIsLiked(!post.isLiked, for: post) { (success) in
             
@@ -161,8 +173,11 @@ extension HomeViewController: PostActionCellDelegate {
             guard success else {return}
             
             // 7: Change the likeCount and isLiked properties of our post if our network request was successful.
-            post.likeCount += !post.isLiked ? 1 : -1
-            post.isLiked = !post.isLiked
+            if counter == 0 {
+                post.likeCount += !post.isLiked ? 1 : -1
+                post.isLiked = !post.isLiked
+            }
+            
             
             // 8: Get a reference to the current cell.
             guard let cell = self.timelineTableView.cellForRow(at: indexPath) as? PostActionCell
@@ -173,6 +188,7 @@ extension HomeViewController: PostActionCellDelegate {
                 self.configureCell(cell, with: post)
             }
             
+            counter += 1
         }
     }
 }

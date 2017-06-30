@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		90CDA01F1F05B35000BEF8C2 /* DatabaseReference+Location.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90CDA01E1F05B35000BEF8C2 /* DatabaseReference+Location.swift */; };
 		90CDA0211F05D51000BEF8C2 /* UITableView+Utility.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90CDA0201F05D51000BEF8C2 /* UITableView+Utility.swift */; };
+		90CDA0231F05D82000BEF8C2 /* MGPaginationHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90CDA0221F05D82000BEF8C2 /* MGPaginationHelper.swift */; };
 		90FF42FE1F016D6100835F1B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90FF42FD1F016D6100835F1B /* AppDelegate.swift */; };
 		90FF43031F016D6100835F1B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 90FF43011F016D6100835F1B /* Main.storyboard */; };
 		90FF43061F016D6100835F1B /* Makestagram.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 90FF43041F016D6100835F1B /* Makestagram.xcdatamodeld */; };
@@ -48,6 +49,7 @@
 		19A28080CCB6419406313E62 /* Pods-Makestagram.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Makestagram.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Makestagram/Pods-Makestagram.debug.xcconfig"; sourceTree = "<group>"; };
 		90CDA01E1F05B35000BEF8C2 /* DatabaseReference+Location.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "DatabaseReference+Location.swift"; sourceTree = "<group>"; };
 		90CDA0201F05D51000BEF8C2 /* UITableView+Utility.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UITableView+Utility.swift"; sourceTree = "<group>"; };
+		90CDA0221F05D82000BEF8C2 /* MGPaginationHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MGPaginationHelper.swift; sourceTree = "<group>"; };
 		90FF42FA1F016D6100835F1B /* Makestagram.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Makestagram.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		90FF42FD1F016D6100835F1B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		90FF43021F016D6100835F1B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -193,6 +195,7 @@
 			isa = PBXGroup;
 			children = (
 				90FF43341F02D57700835F1B /* MGPhotoHelper.swift */,
+				90CDA0221F05D82000BEF8C2 /* MGPaginationHelper.swift */,
 			);
 			name = Helpers;
 			sourceTree = "<group>";
@@ -368,6 +371,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				90FF431F1F01750100835F1B /* LoginViewController.swift in Sources */,
+				90CDA0231F05D82000BEF8C2 /* MGPaginationHelper.swift in Sources */,
 				90FF43231F018E1C00835F1B /* CreateUsernameViewController.swift in Sources */,
 				90FF434A1F0448D200835F1B /* LikeService.swift in Sources */,
 				90FF43311F02D05300835F1B /* MainTabBarController.swift in Sources */,

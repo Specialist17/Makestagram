@@ -120,30 +120,72 @@ struct UserService {
         })
     }
     
-    static func timeline(completion: @escaping ([Post]) -> Void) {
+//    static func timeline(completion: @escaping ([Post]) -> Void) {
+//        let currentUser = User.current
+//        
+//        let timelineRef = DatabaseReference.toLocation(.timeline(userUID: currentUser.uid))
+//        timelineRef.observeSingleEvent(of: .value, with: { (snapshot) in
+//            guard let snapshot = snapshot.children.allObjects as? [DataSnapshot]
+//                else { return completion([]) }
+//            
+//            let dispatchGroup = DispatchGroup()
+//            
+//            var posts = [Post]()
+//            
+//            for postSnap in snapshot {
+//                guard let postDict = postSnap.value as? [String : Any],
+//                    let posterUID = postDict["poster_uid"] as? String
+//                    else { continue }
+//                
+//                dispatchGroup.enter()
+//                
+//                PostService.show(forKey: postSnap.key, posterUID: posterUID) { (post) in
+//                    if let post = post {
+//                        posts.append(post)
+//                    }
+//                    
+//                    dispatchGroup.leave()
+//                }
+//            }
+//            
+//            dispatchGroup.notify(queue: .main, execute: {
+//                completion(posts.reversed())
+//            })
+//        })
+//    }
+
+    
+    static func timeline(pageSize: UInt, lastPostKey: String? = nil, completion: @escaping ([Post]) -> Void) {
         let currentUser = User.current
         
-        let timelineRef = DatabaseReference.toLocation(.timeline(userUID: currentUser.uid))
-        timelineRef.observeSingleEvent(of: .value, with: { (snapshot) in
+        let ref = DatabaseReference.toLocation(.timeline(userUID: currentUser.uid))
+        
+        var query = ref.queryOrderedByKey().queryLimited(toLast: pageSize)
+        
+        if let lastPostKey = lastPostKey {
+            query = query.queryEnding(atValue: lastPostKey)
+        }
+        
+        query.observeSingleEvent(of: .value, with: { (snapshot) in
             guard let snapshot = snapshot.children.allObjects as? [DataSnapshot]
                 else { return completion([]) }
-            
+
             let dispatchGroup = DispatchGroup()
-            
+
             var posts = [Post]()
-            
+
             for postSnap in snapshot {
                 guard let postDict = postSnap.value as? [String : Any],
                     let posterUID = postDict["poster_uid"] as? String
                     else { continue }
-                
+
                 dispatchGroup.enter()
-                
+
                 PostService.show(forKey: postSnap.key, posterUID: posterUID) { (post) in
                     if let post = post {
                         posts.append(post)
                     }
-                    
+
                     dispatchGroup.leave()
                 }
             }
@@ -153,5 +195,4 @@ struct UserService {
             })
         })
     }
-    
 }
