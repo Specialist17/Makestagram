@@ -13,5 +13,11 @@ target 'Makestagram' do
   pod 'Firebase/Storage'
   
   pod 'Kingfisher', '~> 3.0'
+  
+  pod 'FacebookCore'
+  pod 'FacebookLogin'
+  pod 'FirebaseUI/Facebook'
 
+  pod 'GoogleSignIn'
+  pod 'FirebaseUI/Google'
 end
