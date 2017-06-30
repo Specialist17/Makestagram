@@ -42,7 +42,7 @@ struct UserService {
     }
     
     static func posts(for user: User, completion: @escaping ([Post]) -> Void) {
-        let ref = Database.database().reference().child(Constants.Post.posts).child(user.uid)
+        let ref = DatabaseReference.toLocation(.posts(uid: user.uid))
         
         ref.observeSingleEvent(of: .value, with: { (snapshot) in
             guard let snapshot = snapshot.children.allObjects as? [DataSnapshot] else {
@@ -108,7 +108,7 @@ struct UserService {
     }
     
     static func followers(for user: User, completion: @escaping ([String]) -> Void) {
-        let followersRef = Constants.databaseReference.child("followers").child(user.uid)
+        let followersRef = DatabaseReference.toLocation(.showFollowers(userUID: user.uid))
         
         followersRef.observeSingleEvent(of: .value, with: { (snapshot) in
             guard let followersDict = snapshot.value as? [String: Bool] else {
@@ -123,7 +123,7 @@ struct UserService {
     static func timeline(completion: @escaping ([Post]) -> Void) {
         let currentUser = User.current
         
-        let timelineRef = Database.database().reference().child("timeline").child(currentUser.uid)
+        let timelineRef = DatabaseReference.toLocation(.timeline(userUID: currentUser.uid))
         timelineRef.observeSingleEvent(of: .value, with: { (snapshot) in
             guard let snapshot = snapshot.children.allObjects as? [DataSnapshot]
                 else { return completion([]) }

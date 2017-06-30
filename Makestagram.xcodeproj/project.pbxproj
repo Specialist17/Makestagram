@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		90CDA01F1F05B35000BEF8C2 /* DatabaseReference+Location.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90CDA01E1F05B35000BEF8C2 /* DatabaseReference+Location.swift */; };
+		90CDA0211F05D51000BEF8C2 /* UITableView+Utility.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90CDA0201F05D51000BEF8C2 /* UITableView+Utility.swift */; };
 		90FF42FE1F016D6100835F1B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90FF42FD1F016D6100835F1B /* AppDelegate.swift */; };
 		90FF43031F016D6100835F1B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 90FF43011F016D6100835F1B /* Main.storyboard */; };
 		90FF43061F016D6100835F1B /* Makestagram.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 90FF43041F016D6100835F1B /* Makestagram.xcdatamodeld */; };
@@ -44,6 +46,8 @@
 
 /* Begin PBXFileReference section */
 		19A28080CCB6419406313E62 /* Pods-Makestagram.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Makestagram.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Makestagram/Pods-Makestagram.debug.xcconfig"; sourceTree = "<group>"; };
+		90CDA01E1F05B35000BEF8C2 /* DatabaseReference+Location.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "DatabaseReference+Location.swift"; sourceTree = "<group>"; };
+		90CDA0201F05D51000BEF8C2 /* UITableView+Utility.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UITableView+Utility.swift"; sourceTree = "<group>"; };
 		90FF42FA1F016D6100835F1B /* Makestagram.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Makestagram.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		90FF42FD1F016D6100835F1B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		90FF43021F016D6100835F1B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -179,6 +183,8 @@
 				90FF432A1F01BF5700835F1B /* Storyboard+Utility.swift */,
 				90FF433C1F02FC1100835F1B /* UIImage+Size.swift */,
 				90FF433E1F02FDDC00835F1B /* StorageReference+Post.swift */,
+				90CDA01E1F05B35000BEF8C2 /* DatabaseReference+Location.swift */,
+				90CDA0201F05D51000BEF8C2 /* UITableView+Utility.swift */,
 			);
 			name = Extensions;
 			sourceTree = "<group>";
@@ -379,6 +385,8 @@
 				90FF43251F018EF700835F1B /* MakestagramButton.swift in Sources */,
 				90FF42FE1F016D6100835F1B /* AppDelegate.swift in Sources */,
 				90FF43391F02F5B700835F1B /* PostService.swift in Sources */,
+				90CDA01F1F05B35000BEF8C2 /* DatabaseReference+Location.swift in Sources */,
+				90CDA0211F05D51000BEF8C2 /* UITableView+Utility.swift in Sources */,
 				90FF43461F04124900835F1B /* PostHeaderCell.swift in Sources */,
 				90FF433B1F02F90E00835F1B /* Post.swift in Sources */,
 				90FF43351F02D57700835F1B /* MGPhotoHelper.swift in Sources */,
