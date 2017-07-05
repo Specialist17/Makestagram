@@ -9,7 +9,7 @@
 import UIKit
 
 protocol FindFriendsCellDelegate: class {
-    func didTapFollowButton(_ followButton: UIButton, on cell: FindFriendsCell)
+    func didTapFollowButton(_ followButton: UIButton, on cell: FindFriendsCell, pressed: inout Bool)
 }
 
 class FindFriendsCell: UITableViewCell {
@@ -38,6 +38,13 @@ class FindFriendsCell: UITableViewCell {
     // MARK: - IBActions
     
     @IBAction func followButtonTapped(_ sender: UIButton) {
-        delegate?.didTapFollowButton(sender, on: self)
+        var pressed = false
+        delegate?.didTapFollowButton(sender, on: self, pressed: &pressed)
+        
+        if pressed {
+            followButton.isSelected = true
+        } else {
+            followButton.isSelected = false
+        }
     }
 }

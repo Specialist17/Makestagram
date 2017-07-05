@@ -12,7 +12,7 @@
         <!--Find Friends-->
         <scene sceneID="BPB-UM-mfS">
             <objects>
-                <viewController id="caO-0f-M4l" customClass="FindFriendsViewController" customModule="Makestagram" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="caO-0f-M4l" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="ZSW-60-7e4"/>
                         <viewControllerLayoutGuide type="bottom" id="jZQ-Eb-Udr"/>
@@ -25,7 +25,7 @@
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="FindFriendsCell" rowHeight="71" id="rUe-PD-sfb" customClass="FindFriendsCell" customModule="Makestagram" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="71" id="rUe-PD-sfb" customClass="FindFriendsCell" customModule="Makestagram" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="375" height="71"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="rUe-PD-sfb" id="YCQ-hM-8i5">
@@ -44,9 +44,6 @@
                                                         <constraint firstAttribute="width" constant="115" id="cNS-6X-PKj"/>
                                                     </constraints>
                                                     <state key="normal" title="Button"/>
-                                                    <connections>
-                                                        <action selector="followButtonTapped:" destination="rUe-PD-sfb" eventType="touchUpInside" id="coo-Le-lDL"/>
-                                                    </connections>
                                                 </button>
                                             </subviews>
                                             <constraints>
@@ -59,15 +56,8 @@
                                                 <constraint firstItem="lfa-xr-DYa" firstAttribute="top" secondItem="YCQ-hM-8i5" secondAttribute="top" constant="10" id="zMJ-kW-b2c"/>
                                             </constraints>
                                         </tableViewCellContentView>
-                                        <connections>
-                                            <outlet property="followButton" destination="lfa-xr-DYa" id="ut7-6Q-s9e"/>
-                                            <outlet property="usernameLabel" destination="222-Xj-lbK" id="Ntd-u1-B8e"/>
-                                        </connections>
                                     </tableViewCell>
                                 </prototypes>
-                                <connections>
-                                    <outlet property="dataSource" destination="caO-0f-M4l" id="W1y-5V-Pim"/>
-                                </connections>
                             </tableView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -79,13 +69,10 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Find Friends" id="tNq-c9-RzO"/>
-                    <connections>
-                        <outlet property="findFriendsTableView" destination="ecU-Za-lJZ" id="4Rj-sb-kuV"/>
-                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="rfp-DS-xdM" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1130.4000000000001" y="1092.5037481259371"/>
+            <point key="canvasLocation" x="864" y="1093"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="zFD-Rq-Nt0">
@@ -94,7 +81,7 @@
                     <tabBarItem key="tabBarItem" tag="2" title="" image="tab_profile_black" id="elC-g2-y3x"/>
                     <toolbarItems/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="bbQ-ZN-ki9">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="bbQ-ZN-ki9">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>

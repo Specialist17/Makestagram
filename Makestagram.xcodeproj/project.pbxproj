@@ -7,9 +7,15 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		90C7DBC51F06C9E50052BC29 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90C7DBC41F06C9E50052BC29 /* ProfileViewController.swift */; };
+		90C7DBC81F06CC260052BC29 /* Profile.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 90C7DBC61F06CC260052BC29 /* Profile.storyboard */; };
+		90C7DBCC1F06CD690052BC29 /* PostThumbImageCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90C7DBCB1F06CD690052BC29 /* PostThumbImageCell.swift */; };
+		90C7DBCE1F06E7710052BC29 /* ProfileHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90C7DBCD1F06E7710052BC29 /* ProfileHeaderView.swift */; };
 		90CDA01F1F05B35000BEF8C2 /* DatabaseReference+Location.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90CDA01E1F05B35000BEF8C2 /* DatabaseReference+Location.swift */; };
 		90CDA0211F05D51000BEF8C2 /* UITableView+Utility.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90CDA0201F05D51000BEF8C2 /* UITableView+Utility.swift */; };
 		90CDA0231F05D82000BEF8C2 /* MGPaginationHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90CDA0221F05D82000BEF8C2 /* MGPaginationHelper.swift */; };
+		90CDA0251F06BAB500BEF8C2 /* UIColor+Utility.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90CDA0241F06BAB500BEF8C2 /* UIColor+Utility.swift */; };
+		90CDA0271F06BB0A00BEF8C2 /* UIFont+Utility.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90CDA0261F06BB0A00BEF8C2 /* UIFont+Utility.swift */; };
 		90FF42FE1F016D6100835F1B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90FF42FD1F016D6100835F1B /* AppDelegate.swift */; };
 		90FF43031F016D6100835F1B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 90FF43011F016D6100835F1B /* Main.storyboard */; };
 		90FF43061F016D6100835F1B /* Makestagram.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 90FF43041F016D6100835F1B /* Makestagram.xcdatamodeld */; };
@@ -47,9 +53,15 @@
 
 /* Begin PBXFileReference section */
 		19A28080CCB6419406313E62 /* Pods-Makestagram.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Makestagram.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Makestagram/Pods-Makestagram.debug.xcconfig"; sourceTree = "<group>"; };
+		90C7DBC41F06C9E50052BC29 /* ProfileViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
+		90C7DBC71F06CC260052BC29 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Profile.storyboard; sourceTree = "<group>"; };
+		90C7DBCB1F06CD690052BC29 /* PostThumbImageCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PostThumbImageCell.swift; sourceTree = "<group>"; };
+		90C7DBCD1F06E7710052BC29 /* ProfileHeaderView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileHeaderView.swift; sourceTree = "<group>"; };
 		90CDA01E1F05B35000BEF8C2 /* DatabaseReference+Location.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "DatabaseReference+Location.swift"; sourceTree = "<group>"; };
 		90CDA0201F05D51000BEF8C2 /* UITableView+Utility.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UITableView+Utility.swift"; sourceTree = "<group>"; };
 		90CDA0221F05D82000BEF8C2 /* MGPaginationHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MGPaginationHelper.swift; sourceTree = "<group>"; };
+		90CDA0241F06BAB500BEF8C2 /* UIColor+Utility.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIColor+Utility.swift"; sourceTree = "<group>"; };
+		90CDA0261F06BB0A00BEF8C2 /* UIFont+Utility.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIFont+Utility.swift"; sourceTree = "<group>"; };
 		90FF42FA1F016D6100835F1B /* Makestagram.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Makestagram.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		90FF42FD1F016D6100835F1B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		90FF43021F016D6100835F1B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -153,6 +165,7 @@
 				90FF432E1F01C52200835F1B /* NewFriendsViewController.swift */,
 				90FF43301F02D05300835F1B /* MainTabBarController.swift */,
 				90FF434D1F04765300835F1B /* FindFriendsViewController.swift */,
+				90C7DBC41F06C9E50052BC29 /* ProfileViewController.swift */,
 			);
 			name = Controllers;
 			sourceTree = "<group>";
@@ -165,6 +178,8 @@
 				90FF43451F04124900835F1B /* PostHeaderCell.swift */,
 				90FF43471F0415FE00835F1B /* PostActionCell.swift */,
 				90FF434F1F048EB200835F1B /* FindFriendsCell.swift */,
+				90C7DBCB1F06CD690052BC29 /* PostThumbImageCell.swift */,
+				90C7DBCD1F06E7710052BC29 /* ProfileHeaderView.swift */,
 			);
 			name = Views;
 			sourceTree = "<group>";
@@ -187,6 +202,8 @@
 				90FF433E1F02FDDC00835F1B /* StorageReference+Post.swift */,
 				90CDA01E1F05B35000BEF8C2 /* DatabaseReference+Location.swift */,
 				90CDA0201F05D51000BEF8C2 /* UITableView+Utility.swift */,
+				90CDA0241F06BAB500BEF8C2 /* UIColor+Utility.swift */,
+				90CDA0261F06BB0A00BEF8C2 /* UIFont+Utility.swift */,
 			);
 			name = Extensions;
 			sourceTree = "<group>";
@@ -226,6 +243,7 @@
 			isa = PBXGroup;
 			children = (
 				90FF43011F016D6100835F1B /* Main.storyboard */,
+				90C7DBC61F06CC260052BC29 /* Profile.storyboard */,
 				90FF43511F056ACD00835F1B /* FindFriends.storyboard */,
 				90FF43401F0306B100835F1B /* Home.storyboard */,
 				90FF43091F016D6100835F1B /* LaunchScreen.storyboard */,
@@ -307,6 +325,7 @@
 			files = (
 				90FF430B1F016D6100835F1B /* LaunchScreen.storyboard in Resources */,
 				90FF43081F016D6100835F1B /* Assets.xcassets in Resources */,
+				90C7DBC81F06CC260052BC29 /* Profile.storyboard in Resources */,
 				90FF43031F016D6100835F1B /* Main.storyboard in Resources */,
 				90FF43531F056ACD00835F1B /* FindFriends.storyboard in Resources */,
 				90FF43421F0306B100835F1B /* Home.storyboard in Resources */,
@@ -373,13 +392,17 @@
 				90FF431F1F01750100835F1B /* LoginViewController.swift in Sources */,
 				90CDA0231F05D82000BEF8C2 /* MGPaginationHelper.swift in Sources */,
 				90FF43231F018E1C00835F1B /* CreateUsernameViewController.swift in Sources */,
+				90CDA0251F06BAB500BEF8C2 /* UIColor+Utility.swift in Sources */,
 				90FF434A1F0448D200835F1B /* LikeService.swift in Sources */,
 				90FF43311F02D05300835F1B /* MainTabBarController.swift in Sources */,
 				90FF43061F016D6100835F1B /* Makestagram.xcdatamodeld in Sources */,
 				90FF434E1F04765300835F1B /* FindFriendsViewController.swift in Sources */,
 				90FF43271F01ABD000835F1B /* UserService.swift in Sources */,
+				90CDA0271F06BB0A00BEF8C2 /* UIFont+Utility.swift in Sources */,
 				90FF434C1F0464F300835F1B /* FollowService.swift in Sources */,
 				90FF43211F01862900835F1B /* User.swift in Sources */,
+				90C7DBC51F06C9E50052BC29 /* ProfileViewController.swift in Sources */,
+				90C7DBCE1F06E7710052BC29 /* ProfileHeaderView.swift in Sources */,
 				90FF43481F0415FE00835F1B /* PostActionCell.swift in Sources */,
 				90FF432F1F01C52200835F1B /* NewFriendsViewController.swift in Sources */,
 				90FF433F1F02FDDC00835F1B /* StorageReference+Post.swift in Sources */,
@@ -395,6 +418,7 @@
 				90FF433B1F02F90E00835F1B /* Post.swift in Sources */,
 				90FF43351F02D57700835F1B /* MGPhotoHelper.swift in Sources */,
 				90FF43291F01BE5300835F1B /* Constants.swift in Sources */,
+				90C7DBCC1F06CD690052BC29 /* PostThumbImageCell.swift in Sources */,
 				90FF432B1F01BF5700835F1B /* Storyboard+Utility.swift in Sources */,
 				90FF43371F02E30B00835F1B /* StorageService.swift in Sources */,
 				90FF43501F048EB200835F1B /* FindFriendsCell.swift in Sources */,
@@ -404,6 +428,14 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
+		90C7DBC61F06CC260052BC29 /* Profile.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				90C7DBC71F06CC260052BC29 /* Base */,
+			);
+			name = Profile.storyboard;
+			sourceTree = "<group>";
+		};
 		90FF43011F016D6100835F1B /* Main.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
